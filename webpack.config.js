@@ -10,7 +10,7 @@ module.exports = {
     ],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist', 'build')
     },
     module: {
         rules: [{
@@ -55,7 +55,4 @@ module.exports = {
             filename: 'styles.css'
         }),
     ],
-    devServer: {
-        port: 3000
-    }
 }

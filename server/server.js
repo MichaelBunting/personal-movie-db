@@ -2,18 +2,18 @@ const express = require('express');
 const path = require('path');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('../webpack.config.js');
 const exec = require('child_process').exec;
 const app = express();
 
 const compiler = webpack(webpackConfig);
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use(webpackDevMiddleware(compiler, {
     hot: true,
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/build',
     stats: {
         colors: true
     },
