@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import SidebarContainer from './SidebarContainer';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,11 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                Test test testfwfw
+                <SidebarContainer />
+
+                <div class="content">
+                    
+                </div>
             </div>
         )
     }

@@ -1,0 +1,49 @@
+.sidebar {
+    width: 300px;
+    background: $river-bed;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    color: $cadet-blue;
+    font-weight: 600;
+
+    &__block {
+        padding: 20px 30px;
+        border-bottom: 3px solid $oxford-blue;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &-title {
+            font-size: 22px;
+            color: lighten($river-bed, 25%);
+            margin-bottom: 20px;
+        }
+    }
+
+    &__add {
+        font-size: 18px;
+
+        i {
+            margin-right: 15px;
+        }
+    }
+
+    &__menu {
+        margin: -10px 0 0;
+        padding: 0;
+        list-style: none;
+
+        &-item {
+            display: block;
+            padding: 10px 0;
+
+            i {
+                font-size: 1.3em;
+                margin-right: 15px;
+            }
+        }
+    }
+}
