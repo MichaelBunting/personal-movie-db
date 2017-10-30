@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import SidebarContainer from './SidebarContainer';
+import Routing from '../helpers/Routing';
 
 class App extends React.Component {
     constructor(props) {
@@ -11,13 +11,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <SidebarContainer />
-
-                <div class="content">
-                    
-                </div>
-            </div>
+            <Routing />
         )
     }
 }

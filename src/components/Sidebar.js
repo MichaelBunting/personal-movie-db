@@ -1,21 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <div className="sidebar__block">
+            <Link to="/" className="sidebar__block">
                 <img src="./images/pmdb-logo-white.png" className="sidebar__logo" />
-            </div>
+            </Link>
 
             <div className="sidebar__block">
                 <div className="sidebar__block-title">Browse Your</div>
 
                 <ul className="sidebar__menu">
                     <li>
-                        <a href="#" className="sidebar__menu-item">
+                        <Link to="/movies" className="sidebar__menu-item">
                             <i className="fa fa-ticket"></i> Movies
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

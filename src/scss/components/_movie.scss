@@ -1,0 +1,23 @@
+.movie {
+    font-size: 15px;
+    padding: 10px;
+    flex-basis: 20%;
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        &::after {
+            content: '';
+            flex: auto;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__genre {
+        color: $regent-gray;
+    }
+}

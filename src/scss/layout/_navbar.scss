@@ -1,0 +1,57 @@
+.nav {
+    border-bottom: 3px solid lighten($cadet-blue, 10%);
+    position: absolute;
+    top: 0;
+    left: 250px;
+    right: 0;
+    color: $regent-gray;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    &__search {
+        transition: .3s;
+        border-radius: 20px;
+        border: 3px solid $cadet-blue;
+        background: lighten($cadet-blue, 10%);
+        height: 30px;
+        padding: 0 10px 0 30px;
+        outline: none;
+        width: 100%;
+        max-width: 200px;
+        font-size: 14px;
+
+        &:focus {
+            max-width: 500px;
+        }
+        
+        &-container {
+            flex: 1 1 100%;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        &-icon {
+            transform: translate(0, -50%);
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            font-size: 16px;
+        }
+    }
+
+    &__action {
+        padding: 10px 20px;
+        display: block;
+
+        .fa {
+            margin-left: 5px;
+        }
+
+        &-container {
+            display: flex;
+            flex: 0 0 auto;
+        }
+    }
+}

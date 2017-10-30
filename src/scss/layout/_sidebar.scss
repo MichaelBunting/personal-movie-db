@@ -1,5 +1,5 @@
 .sidebar {
-    width: 300px;
+    width: 250px;
     background: $river-bed;
     position: fixed;
     left: 0;
@@ -9,8 +9,9 @@
     font-weight: 600;
 
     &__block {
-        padding: 20px 30px;
+        padding: 20px;
         border-bottom: 3px solid $oxford-blue;
+        display: block;
 
         &:last-child {
             border-bottom: none;
@@ -23,22 +24,18 @@
         }
     }
 
-    &__add {
-        font-size: 18px;
-
-        i {
-            margin-right: 15px;
-        }
-    }
-
     &__menu {
-        margin: -10px 0 0;
+        margin: 0 -20px;
         padding: 0;
         list-style: none;
 
         &-item {
             display: block;
-            padding: 10px 0;
+            padding: 10px 20px;
+
+            &:hover {
+                background: $oxford-blue;
+            }
 
             i {
                 font-size: 1.3em;
