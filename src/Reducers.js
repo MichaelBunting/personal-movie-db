@@ -1,20 +1,14 @@
 import { combineReducers } from 'redux';
-import {
-    REQUEST_DATA,
-    RECEIVE_DATA
-} from './Actions';
 
-const isLoading = (state = false, action) => {
+const searchResults = (state = [], action) => {
     switch (action.type) {
-        case REQUEST_DATA:
-            return true;
         default:
-            return state;
+            return state
     }
 }
 
 const reducer = combineReducers({
-    isLoading
+    searchResults
 })
 
 export default reducer;

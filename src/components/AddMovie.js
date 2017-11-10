@@ -1,25 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SearchField from './SearchField';
+import SearchFieldContainer from '../containers/SearchFieldContainer'
 
-const AddMovie = (props) => {
+const AddMovie = () => {
     return (
         <div>
             <h1 className="title">Add Movie Review</h1>
 
             <div className="form">
-                <SearchField 
+                <SearchFieldContainer 
                     labelName="Movie Name"
-                    handleInput={props.handleSearchInput}
                 />
+                {/* <SearchField 
+                    labelName="Movie Name"
+                /> */}
             </div>
         </div>
     )
-}
-
-AddMovie.propTypes = {
-    handleSearchInput: PropTypes.func.isRequired
 }
 
 export default AddMovie;
