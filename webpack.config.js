@@ -7,7 +7,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   entry: [
-    './src/index.js',
+    './src/index.jsx',
     './src/scss/styles.scss',
   ],
   output: {
