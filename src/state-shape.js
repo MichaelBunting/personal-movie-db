@@ -1,7 +1,6 @@
 const stateShape = {
-    isLoading: false,
-    movies: [{
-        
-    }],
-    searchResults: []
+  isLoading: false,
+  movies: [{
+
+  }],
 };

@@ -1,17 +1,18 @@
 import axios from 'axios';
 
-class MovieModel {
-    getMovies(query, callback) {
-        axios.get(`/getMovies/${query}`)
-            .then(data => {
-                let sortedMovies = data.data.results.sort((a, b) => {
-                    return a.popularity < b.popularity ? 1 : -1;
-                });
-                let searchResults = sortedMovies.slice(0, 5);
+const MovieModel = {
+  getMovies: (query, callback) => {
+    axios.get(`/getMovies/${query}`)
+      .then((data) => {
+        const sortedMovies = data.data.results.sort((a, b) => (
+          a.popularity < b.popularity ? 1 : -1
+        ));
 
-                callback(searchResults);
-            })
-    }
-}
+        const searchResults = sortedMovies.slice(0, 5);
 
-export default new MovieModel();
+        callback(searchResults);
+      });
+  },
+};
+
+export default MovieModel;

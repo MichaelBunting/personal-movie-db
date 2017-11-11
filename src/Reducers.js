@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 
 const searchResults = (state = [], action) => {
-    switch (action.type) {
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
 
 const reducer = combineReducers({
-    searchResults
-})
+  searchResults,
+});
 
 export default reducer;
