@@ -11,17 +11,16 @@ const SearchField = props => (
       className="form__label"
     >
       { props.labelName }
-
-      <input
-        id={labelID}
-        type="text"
-        className="form__control"
-        onInput={props.handleInput}
-        onClick={props.openSearchField}
-      />
     </label>
+    <input
+      id={labelID}
+      type="text"
+      className="form__control"
+      onInput={props.handleInput}
+      onClick={props.openSearchField}
+    />
 
-    <div className="form__search">
+    <div className="form__search" id={props.searchBoxId}>
       {props.searchResults.length > 0 ?
         props.searchResults.map((res, i) => (
           <div key={i} className="form__search-result">
@@ -34,6 +33,7 @@ const SearchField = props => (
 );
 
 SearchField.propTypes = {
+  searchBoxId: PropTypes.string.isRequired,
   labelName: PropTypes.string.isRequired,
   searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleInput: PropTypes.func.isRequired,

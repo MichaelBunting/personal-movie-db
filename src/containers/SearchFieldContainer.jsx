@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropType from 'prop-types';
+import {
+  uniqueId
+} from 'lodash';
 
 import SearchField from '../components/SearchField';
 import MovieModel from '../models/MovieModel';
@@ -12,16 +14,18 @@ class SearchFieldContainer extends React.Component {
     this.closeSearchField = this.closeSearchField.bind(this);
     this.openSearchField = this.openSearchField.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.clearSearchField = this.clearSearchField.bind(this);
 
     this.state = {
       searchResults: [],
+      searchBoxId: uniqueId('searchbox-'),
     };
   }
 
   componentDidMount() {
-    this.searchBox = ReactDOM.findDOMNode(this).querySelector('.form__search');
+    this.searchBox = document.querySelector(`#${this.state.searchBoxId}`);
 
-    document.documentElement.addEventListener('click', (e) => {
+    document.documentElement.addEventListener('click', () => {
       this.closeSearchField();
     });
   }
@@ -53,6 +57,7 @@ class SearchFieldContainer extends React.Component {
       }, 200);
     } else {
       this.closeSearchField();
+      this.clearSearchField();
     }
   }
 
@@ -60,9 +65,18 @@ class SearchFieldContainer extends React.Component {
     this.searchBox.value = text;
   }
 
+  clearSearchField() {
+    setTimeout(() => {
+      this.setState({
+        searchResults: [],
+      });
+    }, 300);
+  }
+
   render() {
     return (
       <SearchField
+        searchBoxId={this.state.searchBoxId}
         labelName={this.props.labelName}
         handleInput={this.handleInput}
         searchResults={this.state.searchResults}
