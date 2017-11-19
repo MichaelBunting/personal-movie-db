@@ -27,7 +27,7 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 }));
 
-MongoClient.connect('mongodb://localhost:27017/mongo-todo', (err, database) => {
+MongoClient.connect('mongodb://localhost:27017/personal-movie-db', (err, database) => {
   if (!err) {
     console.log(`Connected to ${database.databaseName}`);
 
