@@ -42,7 +42,7 @@
   "scripts": {
     "start": "nodemon --watch server server/server.js",
     "compile": "webpack",
-    "lint-js": "eslint --ext .js src",
-    "lint-js-fix": "eslint --ext .js src --fix"
+    "lint-js": "eslint --ext .js --ext .jsx src",
+    "lint-js-fix": "eslint --ext .js --ext .jsx src --fix"
   }
 }

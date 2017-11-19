@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import {
-  uniqueId,
+  uniqueId
 } from 'lodash';
 
 import SearchField from '../components/SearchField';
@@ -102,7 +102,7 @@ SearchFieldContainer.propTypes = {
 };
 
 SearchFieldContainer.defaultProps = {
-  labelName: 'Input',
+  labelName: 'Label',
 };
 
 export default SearchFieldContainer;

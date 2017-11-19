@@ -22,7 +22,8 @@ const SearchField = props => (
         className="form__control-icon"
         onClick={(e) => {
           props.clearSearchField();
-          e.target.closest('.form__control-container').querySelector('.form__control').value = '';
+          e.target.closest('.form__control-container')
+            .querySelector('.form__control').value = '';
         }}
       >
         <i className="fa fa-times-circle-o" />
