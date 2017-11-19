@@ -23,42 +23,6 @@
         width: 100%;
         border: 2px solid $cadet-blue;
         outline: none;
-        font-family: $raleway;
-
-        &:focus {
-            + .form__control-icon {
-                top: 50%;
-                transform: translate(0, -50%);
-            }
-        }
-
-        &--icon {
-            padding-right: 45px;
-        }
-
-        &-container {
-            position: relative;
-            overflow: hidden;
-        }
-
-        &-icon {
-            transition: .3s;
-            position: absolute;
-            top: 100%;
-            right: 15px;
-            font-size: 20px;
-            color: $cadet-blue;
-            cursor: pointer;
-            -webkit-appearance: none;
-            border: 0;
-            background: none;
-            padding: 0;
-            outline: 0;
-
-            &:hover {
-                color: $regent-gray;
-            }
-        }
     }
 
     &__search {

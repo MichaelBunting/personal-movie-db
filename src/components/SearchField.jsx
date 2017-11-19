@@ -1,43 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { uniqueId } from 'lodash';
+
+const labelID = uniqueId('label-');
 
 const SearchField = props => (
   <div className="form__group form__search-container">
     <label
-      htmlFor={props.searchFieldId}
+      htmlFor={labelID}
       className="form__label"
     >
       { props.labelName }
     </label>
-    <div className="form__control-container">
-      <input
-        id={props.searchFieldId}
-        type="text"
-        className="form__control form__control--icon"
-        onInput={props.handleInput}
-        onFocus={props.handleInput}
-        onClick={props.openSearchField}
-      />
-      <button
-        className="form__control-icon"
-        onClick={(e) => {
-          props.clearSearchField();
-          e.target.closest('.form__control-container').querySelector('.form__control').value = '';
-        }}
-      >
-        <i className="fa fa-times-circle-o" />
-      </button>
-    </div>
+    <input
+      id={labelID}
+      type="text"
+      className="form__control"
+      onInput={props.handleInput}
+      onClick={props.openSearchField}
+    />
 
     <div className="form__search" id={props.searchBoxId}>
       {props.searchResults.length > 0 ?
-        props.searchResults.map(res => (
-          <div
-            key={res.id}
-            className="form__search-result"
-            onClick={props.chooseSearchOption}
-            data-title={res.title}
-          >
+        props.searchResults.map((res, i) => (
+          <div key={i} className="form__search-result">
             {res.title}
           </div>
         ))
@@ -48,13 +34,10 @@ const SearchField = props => (
 
 SearchField.propTypes = {
   searchBoxId: PropTypes.string.isRequired,
-  searchFieldId: PropTypes.string.isRequired,
   labelName: PropTypes.string.isRequired,
   searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleInput: PropTypes.func.isRequired,
   openSearchField: PropTypes.func.isRequired,
-  clearSearchField: PropTypes.func.isRequired,
-  chooseSearchOption: PropTypes.func.isRequired,
 };
 
 export default SearchField;

@@ -15,18 +15,15 @@ class SearchFieldContainer extends React.Component {
     this.openSearchField = this.openSearchField.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.clearSearchField = this.clearSearchField.bind(this);
-    this.chooseSearchOption = this.chooseSearchOption.bind(this);
 
     this.state = {
       searchResults: [],
       searchBoxId: uniqueId('searchbox-'),
-      searchFieldId: uniqueId('searchfield-'),
     };
   }
 
   componentDidMount() {
     this.searchBox = document.querySelector(`#${this.state.searchBoxId}`);
-    this.searchField = document.querySelector(`#${this.state.searchFieldId}`);
 
     document.documentElement.addEventListener('click', () => {
       this.closeSearchField();
@@ -76,22 +73,15 @@ class SearchFieldContainer extends React.Component {
     }, 300);
   }
 
-  chooseSearchOption(e) {
-    this.searchField.value = e.target.dataset.title;
-  }
-
   render() {
     return (
       <SearchField
         searchBoxId={this.state.searchBoxId}
-        searchFieldId={this.state.searchFieldId}
         labelName={this.props.labelName}
         handleInput={this.handleInput}
         searchResults={this.state.searchResults}
         openSearchField={this.openSearchField}
         closeSearchField={this.closeSearchField}
-        clearSearchField={this.clearSearchField}
-        chooseSearchOption={this.chooseSearchOption}
       />
     );
   }
