@@ -17,17 +17,15 @@ const SearchField = props => (
         onInput={props.handleInput}
         onFocus={props.handleInput}
         onClick={props.openSearchField}
+        name="title"
       />
-      <button
+      <div
+        type="button"
         className="form__control-icon"
-        onClick={(e) => {
-          props.clearSearchField();
-          e.target.closest('.form__control-container')
-            .querySelector('.form__control').value = '';
-        }}
+        onClick={props.clearSearchField}
       >
         <i className="fa fa-times-circle-o" />
-      </button>
+      </div>
     </div>
 
     <div className="form__search" id={props.searchBoxId}>

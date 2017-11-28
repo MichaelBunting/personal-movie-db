@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import {
-  uniqueId
+  uniqueId,
 } from 'lodash';
 
 import SearchField from '../components/SearchField';
@@ -30,6 +30,7 @@ class SearchFieldContainer extends React.Component {
 
     document.documentElement.addEventListener('click', () => {
       this.closeSearchField();
+      this.searchField.nextSibling.classList.remove('in');
     });
   }
 
@@ -40,6 +41,7 @@ class SearchFieldContainer extends React.Component {
   openSearchField() {
     if (this.state.searchResults.length > 0) {
       this.searchBox.classList.add('in');
+      this.searchField.nextSibling.classList.add('in');
     }
   }
 
@@ -60,7 +62,6 @@ class SearchFieldContainer extends React.Component {
       }, 200);
     } else {
       this.closeSearchField();
-      this.clearSearchField();
     }
   }
 
@@ -69,6 +70,8 @@ class SearchFieldContainer extends React.Component {
   }
 
   clearSearchField() {
+    this.searchField.value = '';
+
     setTimeout(() => {
       this.setState({
         searchResults: [],

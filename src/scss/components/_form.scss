@@ -25,15 +25,16 @@
         outline: none;
         font-family: $raleway;
 
-        &:focus {
-            + .form__control-icon {
-                top: 50%;
-                transform: translate(0, -50%);
-            }
-        }
-
         &--icon {
             padding-right: 45px;
+        }
+        &--textarea {
+            padding: 8px 10px;
+            height: auto;
+            line-height: 1.4;
+            min-height: 39px;
+            margin: 0;
+            resize: vertical;
         }
 
         &-container {
@@ -44,7 +45,9 @@
         &-icon {
             transition: .3s;
             position: absolute;
-            top: 100%;
+            transform: translate(0, -50%);
+            top: 50%;
+            opacity: 0;
             right: 15px;
             font-size: 20px;
             color: $cadet-blue;
@@ -54,6 +57,10 @@
             background: none;
             padding: 0;
             outline: 0;
+
+            &.in {
+                opacity: 1;
+            }
 
             &:hover {
                 color: $regent-gray;
@@ -73,6 +80,8 @@
         transform: scale(.9);
         opacity: 0;
         pointer-events: none;
+        z-index: 10;
+        background: $white;
 
         &.in {
             transform: scale(1);
@@ -91,6 +100,51 @@
 
             &:hover {
                 background: rgba($cadet-blue, .2);
+            }
+        }
+    }
+
+    &__rating {
+        padding: 0 5px;
+        font-size: 22px;
+        cursor: pointer;
+        color: $regent-gray;
+
+        &.active ~ li.form__rating {
+            color: $regent-gray;
+        }
+
+        &:hover ~ li.form__rating {
+            color: $regent-gray;
+        }
+
+        &-container {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-flex;
+            margin-left: -5px;
+
+            &.has-value {
+                .form__rating {
+                    color: $gold;
+
+                    &:hover ~ .form__rating {
+                        color: $regent-gray;
+                    }
+                }
+
+                &:hover {
+                    .form__rating {
+                        color: $gold;
+                    }
+                }
+            }
+
+            &:hover {
+                .form__rating {
+                    color: $gold;
+                }
             }
         }
     }

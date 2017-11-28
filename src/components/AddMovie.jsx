@@ -1,16 +1,28 @@
 import React from 'react';
 
 import SearchFieldContainer from '../containers/SearchFieldContainer';
+import RatingContainer from '../containers/RatingContainer';
 
 const AddMovie = () => (
   <div>
     <h1 className="title">Add Movie Review</h1>
 
-    <div className="form">
+    <form className="form">
       <SearchFieldContainer
         labelName="Movie Name"
       />
-    </div>
+      <RatingContainer />
+
+      <div className="form__group">
+        <label htmlFor="reviewField" className="form__label">Review</label>
+        <textarea
+          id="reviewField"
+          rows="5"
+          className="form__control form__control--textarea"
+          name="review"
+        />
+      </div>
+    </form>
   </div>
 );
 
